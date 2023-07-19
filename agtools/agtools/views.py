@@ -3,6 +3,5 @@ from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
 
 
-@login_required()
 def index(request):
-    return redirect('/customers/')
+    return render(request, template_name="home.html")

@@ -27,7 +27,7 @@ if settings.DEBUG:
 
 urlpatterns.extend(
     [
-        path('', index),
+        path('', index, name='home'),
         path('admin/', admin.site.urls),
         path('customers/', include('customer.urls', namespace='customers')),
         path('api/customers/', include('customer.api_urls')),

@@ -3,26 +3,25 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>Caderno de Clientes - Login</title>
+        <title>Caderno de Clientes</title>
         
-        <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css" integrity="sha384-X38yfunGUhNzHpBaEBsWLO+A0HDYOQi8ufWDkZ0k9e0eXz/tH3II7uKZ9msv++Ls" crossorigin="anonymous">
         <script src="https://kit.fontawesome.com/09f3570928.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="{% static "css/style.css" %}"/>
 
     </head>
-    <body>
+    <body id="bg" style='background-image: url("{% static 'images/wallpaper.jpg' %}")'>
         <nav class="navbar navbar-expand-lg bg-dark mynav" role="navigation" id="navbar">
             <div class="container">
-                <div class="pure-u-1-5">
-                    <a class="pure-button" href="{% url 'home' %}">
-                        <i class="fa-solid fa-house"></i> Home
-                    </a>
-                </div>
-                <div class="pure-u-3-5"></div>
+                <div class="pure-u-4-5"></div>
                 <div class="pure-u-1-5">
                     <a class="pure-button" href="https://github.com/B21Munhoz/django-proj">
                         <i class="fa-brands fa-github"></i> Projeto
+                    </a>
+                    <span></span>
+                    <a class="pure-button" href="{% url 'login' %}">
+                        <i class="fa-solid fa-key"></i> Entrar
                     </a>
                 </div>
             </div>
@@ -31,15 +30,10 @@
             <div class="pure-u-1-3"></div>
             <div class="pure-u-1-3">
                 <div class="container">
-                    <h1>Meu Caderno de Clientes</h1>
+                    <h1 style="color: white">Caderno de Clientes</h1>
                 </div>
                 <div class="container">
-                    <form method="post">
-                        {% csrf_token %}
-                        {{ error }}
-                        {{form.as_p}}
-                        <button type="submit" class="pure-button pure-button-primary">Login</button>
-                    </form>
+                    <a class="pure-button pure-button-primary" href="{% url 'login' %}"><i class="fa-solid fa-key"></i> Entrar</a>
                 </div>
             </div>
             <div class="pure-u-1-3"></div>

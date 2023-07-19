@@ -31,4 +31,4 @@ class LoginTemplateView(APIView):
 
 def logout_view(request):
     logout(request)
-    return redirect('/customers/')
+    return redirect('/')
