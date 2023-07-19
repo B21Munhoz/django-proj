@@ -1,0 +1,10 @@
+
+agtools/customer/__pycache__/
+
+agtools/agtools/__pycache__/
+
+agtools/customer/migrations/__pycache__/
+
+env/
+
+*.sqlite3
