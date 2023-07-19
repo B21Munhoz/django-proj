@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Meus Clientes</title>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg bg-dark mynav" role="navigation" id="navbar">
+            <div class="container">
+                <div class="navbar-nav align-items-center">
+                    <a class="nav-item nav-link" href="{% url 'customers:create' %}" class="btn btn-simple">Registrar Cliente</a>
+                    <a class="nav-item nav-link" href="{% url 'logout' %}" class="btn btn-simple">Sair</a>
+                </div>
+            </div>
+        </nav>
+        <h1>Meus Clientes</h1>
+        {% if customers %}
+
+        <table>
+        <tr>
+        {% for key, value in customers.0.items %}
+            {% if key != "id" %}
+                <th> {{ key }} </th>
+            {% endif %}
+        {% endfor %}
+        </tr> 
+        {% for customer in customers %}
+            <tr>
+            {% for key, value in customer.items %}
+                {% if key != "id" %}
+                    <td> {{ value }} </td>
+                {% endif %}
+            {% endfor %}
+            </tr>
+        {% endfor %}
+        <table>
+
+        {% endif %}
+
+        <br>
+        <br>
+    </body>
+</html>
